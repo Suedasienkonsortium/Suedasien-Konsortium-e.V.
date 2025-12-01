@@ -6,78 +6,223 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Südasien-Konsortium e.V. – Förderverein für Südasienforschung, wissenschaftlichen Austausch und interdisziplinäre Zusammenarbeit. Sitz in Berlin." />
   <style>
+    :root {
+      --blue-dark: #083456;
+      --blue: #0f4a7b;
+      --gold: #d99208;
+      --bg: #f5f5f5;
+      --hero-bg: #e8f1fa;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       font-family: system-ui, sans-serif;
       margin: 0;
-      background: #f5f5f5;
+      background: var(--bg);
       line-height: 1.6;
     }
+
     header {
-      background: #0f4a7b;
+      background: var(--blue-dark);
       color: white;
-      padding: 1rem;
+      padding: 0.75rem 1rem;
     }
-    header h1 {
+
+    .header-inner {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .header-inner img {
+      height: 80px;
+      width: auto;
+    }
+
+    .header-text h1 {
       margin: 0;
+      font-size: 1.6rem;
     }
+
+    .header-text p {
+      margin: 0.2rem 0 0;
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+
     nav {
-      background: #083456;
+      background: var(--blue);
       padding: 0.5rem 1rem;
     }
+
+    nav .nav-inner {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
     nav a {
       color: white;
       text-decoration: none;
       margin-right: 1rem;
+      font-size: 0.9rem;
     }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
     .hero {
-      background: #e8f1fa;
+      background: var(--hero-bg);
       padding: 2rem 1.5rem;
     }
+
+    .hero-inner {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
     .hero h2 {
       margin-top: 0;
-      color: #0f4a7b;
+      color: var(--blue);
     }
+
+    .hero p {
+      max-width: 820px;
+    }
+
     section {
       background: white;
       margin: 1.5rem auto;
       padding: 1.5rem;
-      max-width: 900px;
+      max-width: 1000px;
       border-radius: 8px;
     }
+
     h2 {
-      color: #0f4a7b;
+      color: var(--blue);
+      margin-top: 0;
     }
+
+    h3 {
+      color: var(--blue);
+      margin-top: 1.25rem;
+    }
+
+    ul {
+      padding-left: 1.2rem;
+    }
+
+    .board-list,
+    .bank-box {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .bank-box li {
+      margin-bottom: 0.2rem;
+    }
+
+    .bank-highlight {
+      background: #fff7e5;
+      border-left: 4px solid var(--gold);
+      padding: 0.75rem 1rem;
+      border-radius: 4px;
+      margin-top: 0.75rem;
+      font-size: 0.95rem;
+    }
+
+    .photo-wrapper {
+      margin-top: 1rem;
+      text-align: center;
+    }
+
+    .photo-wrapper img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+    }
+
+    .photo-caption {
+      font-size: 0.85rem;
+      color: #555;
+      margin-top: 0.4rem;
+    }
+
+    details {
+      margin-top: 1rem;
+    }
+
+    details summary {
+      cursor: pointer;
+      font-weight: 600;
+      color: var(--blue);
+    }
+
+    details summary::marker {
+      color: var(--blue);
+    }
+
     footer {
       text-align: center;
       padding: 1rem;
       margin-top: 2rem;
-      background: #083456;
+      background: var(--blue-dark);
       color: white;
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 640px) {
+      .header-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .header-inner img {
+        height: 70px;
+      }
     }
   </style>
 </head>
 <body>
 
 <header>
-  <h1>Südasien-Konsortium e.V.</h1>
-  <p>Gemeinnütziger Verein · Sitz in Berlin</p>
+  <div class="header-inner">
+    <img src="SAK_Logo.png" alt="Logo des Südasien-Konsortium e.V." />
+    <div class="header-text">
+      <h1>Südasien-Konsortium e.V.</h1>
+      <p>Gemeinnütziger Verein · Sitz in Berlin</p>
+    </div>
+  </div>
 </header>
 
 <nav>
-  <a href="#about">Über uns</a>
-  <a href="#mission">Vereinszweck</a>
-  <a href="#events">Aktivitäten</a>
-  <a href="#contact">Kontakt</a>
+  <div class="nav-inner">
+    <a href="#about">Über uns</a>
+    <a href="#mission">Mission Statement</a>
+    <a href="#statutes">Satzung</a>
+    <a href="#board">Vorstand</a>
+    <a href="#events">Aktivitäten</a>
+    <a href="#contact">Kontakt &amp; Bankverbindung</a>
+  </div>
 </nav>
 
 <div class="hero">
-  <h2>Willkommen beim Südasien-Konsortium e.V.</h2>
-  <p>
-    Wir fördern die wissenschaftliche Auseinandersetzung mit Südasien und stärken den
-    Austausch zwischen Forscherinnen und Forschern in Deutschland und den Ländern
-    Südasiens. Unser Verein ist gemeinnützig und verfolgt ausschließlich
-    nicht-kommerziellen, wissenschaftlichen Zweck.
-  </p>
+  <div class="hero-inner">
+    <h2>Willkommen beim Südasien-Konsortium e.V.</h2>
+    <p>
+      Das Südasien-Konsortium e.V. fördert die wissenschaftliche Auseinandersetzung mit Südasien
+      und stärkt den Austausch zwischen Forscherinnen und Forschern in Deutschland und den Ländern
+      Südasiens. Der Verein ist gemeinnützig und verfolgt ausschließlich nicht-kommerzielle,
+      wissenschaftliche Zwecke.
+    </p>
+  </div>
 </div>
 
 <section id="about">
@@ -93,51 +238,307 @@
     Wir fördern Forschung, Vernetzung, Tagungen, Veröffentlichungen und neue
     interdisziplinäre Arbeitsfelder.
   </p>
+
+  <div class="photo-wrapper">
+    <img src="jahresversammlung1.jpg" alt="Mitgliederversammlung des Südasien-Konsortium e.V. 2024" />
+    <div class="photo-caption">
+      Mitgliederversammlung des Südasien-Konsortium e.V. 2024
+    </div>
+  </div>
 </section>
 
 <section id="mission">
-  <h2>Vereinszweck</h2>
+  <h2>Mission Statement</h2>
+  <p><em>Angenommen von der Mitgliederversammlung in Berlin am 13. Juli 2024.</em></p>
+
   <p>
-    Laut Satzung verfolgt der Verein ausschließlich und unmittelbar gemeinnützige Zwecke.
-    Er fördert die Wissenschaft von Südasien mit Schwerpunkt auf geisteswissenschaftlichen
-    Ansätzen und unterstützt:
+    Das Südasien-Konsortium e. V. will zwei wesentliche Mängel der gegenwärtigen
+    Südasienwissenschaft und der Rede von Südasien in Deutschland angehen. Diese Mängel
+    werden sichtbar vor dem Hintergrund der wachsenden Bedeutung Indiens und Südasiens.
+  </p>
+  <p>
+    Während der Kampf um eine neue Weltordnung entbrennt, muss Europa, auf der Suche
+    nach seinem Platz und nach künftigen Partnern, ein großes Interesse an Indien und
+    Südasien haben. Indien seinerseits strebt nach einer Führungsrolle im Globalen Süden,
+    der von Konflikten durchzogen nach einem neuen Selbstverständnis und einer neuen
+    Identität sucht. Gleichzeitig strebt Indien nach dem ihm zukommenden Platz in einem
+    neuen Konzert der Weltmächte.
+  </p>
+  <p>
+    Deutschland genießt einen guten Ruf in Indien und Südasien, da es nicht unmittelbar in
+    die koloniale Vergangenheit dieser Länder verwickelt war und eine lange Tradition der
+    Gelehrsamkeit und kultureller Beziehungen im Hinblick auf Südasien aufweist, verbunden
+    in jüngerer Zeit mit einem bedeutenden und zunehmenden wissenschaftlichen und
+    wirtschaftlichen Austausch. Dank seiner vornehmlich kulturellen und wirtschaftlichen
+    Interessen an Indien und Südasien und fehlenden unmittelbaren Machtinteressen kann
+    Deutschland auch ein kritischer Partner sein in Sachen Menschenrechte, Rechtsstaatlichkeit,
+    demokratische Entwicklung und individueller Freiheitsrechte.
+  </p>
+  <p>
+    Die zwei Mängel, zu deren Abstellung das Konsortium vor diesem Hintergrund beitragen
+    will, sind
   </p>
   <ul>
-    <li>wissenschaftlichen Austausch zwischen Deutschland und Südasien,</li>
-    <li>Tagungen, Publikationen und Forschungsinitiativen,</li>
-    <li>interdisziplinäre Zusammenarbeit (u.a. Indologie, Islamwissenschaften),</li>
-    <li>die Vernetzung unbestallter Wissenschaftlerinnen und Wissenschaftler,</li>
-    <li>die Kooperation mit wissenschaftlichen Einrichtungen und Förderorganisationen.</li>
+    <li>die angesichts der geschilderten Herausforderungen geringe Beachtung Indiens und
+      Südasiens in den Medien und der öffentlichen Rede in Deutschland und</li>
+    <li>die Unzulänglichkeit wissenschaftlicher Befassung mit Indien und Südasien in
+      Deutschland.</li>
   </ul>
   <p>
-    Der Verein ist selbstlos tätig und verwendet seine Mittel ausschließlich für seine satzungsmäßigen Aufgaben.
+    Während das Konsortium diesen Mangel benennen, analysieren und kritisieren kann, braucht
+    es Partner zu seiner Behebung.
+  </p>
+  <p>
+    Gemäß seinen Statuten arbeitet der Verein vor allem durch einen, „Konsortium“
+    genannten, Kreis von dem Verein verbundenen international tätigen Wissenschaftlern und
+    Wissenschaftlerinnen mit den Vereinsmitgliedern als Steuerungskomitee. Die
+    Wissenschaftlerinnen und Wissenschaftler im „Konsortium“ schlagen selbst Projekte vor
+    oder werden eingeladen, an Projekten mitzuwirken in Übereinstimmung mit dem
+    Arbeitsprogramm des Vereins. Dieses Vorgehen soll hohe Flexibilität gewährleisten bei der
+    Beantwortung von Anfragen von innerhalb und außerhalb des Vereins, einschließlich
+    Projektanfragen aus der Wirtschaft und von öffentlichen Einrichtungen. Jedes Projekt muss
+    Angaben zu seiner Finanzierung enthalten.
+  </p>
+  <p>
+    Es ist die Absicht des Vereins Südasien-Konsortium e. V., zu seinen Vorhaben
+    insbesondere auch Wissenschaftlerinnen und Wissenschaftler außerhalb etablierter
+    akademischer Einrichtungen heranzuziehen, um die Vielfalt und Breite der ihm zur
+    Verfügung stehenden Expertise zu vergrößern. Zur Erfüllung seiner Aufgaben veranstaltet
+    das Südasien-Konsortium e. V. Seminare und Konferenzen, betreibt Forschungen und
+    Veröffentlichungen zu besonderen Themen und fördert den Informationsaustausch und
+    die Vernetzung unter Wissenschaftlerinnen und Wissenschaftlern.
   </p>
 </section>
 
+<section id="statutes">
+  <h2>Satzung des Südasien-Konsortium e.V.</h2>
+
+  <p><em>Beschlossen in Berlin am 10. Oktober 2022.</em></p>
+
+  <!-- optional einklappbar, damit die Seite übersichtlich bleibt -->
+  <details open>
+    <summary>Vollständige Satzung anzeigen / ausblenden</summary>
+
+    <h3>Artikel 1 — Name und Sitz</h3>
+    <p>Der Verein trägt den Namen „Südasien-Konsortium e.V.“</p>
+    <p>Der Sitz ist Berlin.</p>
+    <p>Das Geschäftsjahr ist das Kalenderjahr.</p>
+
+    <h3>Artikel 2 — Vereinszweck</h3>
+    <p>
+      Der Verein verfolgt ausschließlich und unmittelbar gemeinnützige Zwecke im Sinne des
+      Abschnitts „Steuerbegünstigte Zwecke“ der Abgabenordnung.
+    </p>
+    <p>
+      Der Verein fördert die Wissenschaft von Südasien vornehmlich auf geisteswissenschaftlichem
+      Gebiet in Deutschland und den wissenschaftlichen Austausch mit den Ländern Südasiens durch
+      Tagungen, Veröffentlichungen und die Vermittlung von Kontakten zwischen Wissenschaftlern
+      und Wissenschaftlerinnen. Insbesondere unterstützt er die interdisziplinäre Zusammenarbeit
+      unter Einbeziehung der Indologie ebenso wie der Islamwissenschaften, das Aufsuchen neuer
+      Forschungsfelder und die Tätigkeit unbestallter Wissenschaftler und Wissenschaftlerinnen und
+      ihre Verbindung zu bestehenden wissenschaftlichen Einrichtungen und ihren
+      Förderorganisationen.
+    </p>
+    <p>
+      Der Verein ist selbstlos tätig und verfolgt nicht in erster Linie eigenwirtschaftliche Zwecke.
+      Mittel des Vereins dürfen nur für die satzungsmäßigen Zwecke verwendet werden. Die
+      Mitglieder erhalten keine Zuwendungen aus den Mitteln des Vereins. Es darf keine Person
+      oder Einrichtung durch Ausgaben, die dem Zweck des Vereins fremd sind, oder durch
+      unverhältnismäßig hohe Vergütungen begünstigt werden.
+    </p>
+
+    <h3>Artikel 3 — Mitgliedschaft</h3>
+    <p>
+      Mitglieder des Vereins sind die sieben Gründungsmitglieder. Wenn ein Gründungsmitglied
+      ausscheidet, kooptieren die verbliebenen Gründungsmitglieder einen Nachfolger oder eine
+      Nachfolgerin. Weitere natürliche oder juristische Personen können Mitglied werden, wenn
+      alle Gründungsmitglieder zustimmen. Im Falle satzungswidrigen Verhaltens können die
+      Gründungsmitglieder mit Mehrheit von sechs Stimmen ein Mitglied ausschließen.
+    </p>
+    <p>
+      Die Aufnahme in den Verein ist schriftlich beim Vorstand zu beantragen. Der Vorstand legt der
+      Mitgliederversammlung den Antrag mit seiner Empfehlung zur Entscheidung vor. Eine
+      Ablehnung des Antrags muss gegenüber dem Antragsteller oder der Antragstellerin nicht
+      begründet werden.
+    </p>
+    <p>
+      Die Mitgliedschaft im Verein endet durch Tod, Austritt oder Ausschluss. Der Austritt ist
+      schriftlich gegenüber dem Vorstand mit einer Frist von drei Monaten zum Ende des
+      Geschäftsjahres zu erklären.
+    </p>
+    <p>
+      Ein Mitglied kann durch Beschluss der Mitgliederversammlung aus dem Verein ausgeschlossen
+      werden, wenn es
+    </p>
+    <ul>
+      <li>schuldhaft das Ansehen oder die Interessen des Vereins in schwerwiegender Weise schädigt oder</li>
+      <li>mehr als sechs Monate mit seinen finanziellen Verpflichtungen gegenüber dem Verein im Rückstand ist und trotz schriftlicher Mahnung unter Androhung des Ausschlusses die Rückstände nicht beglichen hat.</li>
+    </ul>
+    <p>
+      Dem Mitglied ist Gelegenheit zu geben, in der Mitgliederversammlung zu den Gründen des
+      Ausschlusses Stellung zu nehmen. Diese sind ihm mindestens zwei Wochen vorher
+      mitzuteilen.
+    </p>
+    <p>
+      Jedes Mitglied hat das Recht, an gemeinsamen Veranstaltungen teilzunehmen. Jedes Mitglied
+      hat gleiches Stimm- und Wahlrecht in der Mitgliederversammlung.
+    </p>
+    <p>
+      Jedes Mitglied hat die Pflicht, die Interessen des Vereins zu fördern, regelmäßig einen im
+      Voraus fälligen monatlichen Mitgliedsbeitrag zu leisten und das Vereinsleben durch seine
+      Mitarbeit zu unterstützen.
+    </p>
+
+    <h3>Artikel 4 — Konsortium</h3>
+    <p>
+      Regelmäßig mit dem Verein zusammenarbeitende und von ihm geförderte Wissenschaftler und
+      Wissenschaftlerinnen, vornehmlich aus Deutschland und Südasien, bilden das Konsortium.
+    </p>
+    <p>
+      Der Verein beruft die Mitglieder des Konsortiums durch Beschluss seines Vorstands, konsultiert
+      Mitglieder des Konsortiums zu seinen Zwecken und fordert sie auf zur Mitwirkung an seinen
+      Vorhaben. Er unterstützt seinerseits die Verwirklichung von Initiativen und Vorhaben von
+      Mitgliedern des Konsortiums und setzt sich ein für ihre Zusammenarbeit untereinander sowie
+      mit Einrichtungen der Wissenschaft und Wissenschaftsförderung.
+    </p>
+
+    <h3>Artikel 5 — Vorstand und Geschäftsführung</h3>
+    <p>Organe des Vereins sind der Vorstand und die Mitgliederversammlung.</p>
+    <p>
+      Der Vorstand besteht aus dem oder der Vorsitzenden, dem oder der stellvertretenden
+      Vorsitzenden und dem Schatzmeister oder der Schatzmeisterin. Wenn erforderlich, kann der
+      Vorstand zur Unterstützung der Geschäftsführung Mitarbeiter oder Mitarbeiterinnen
+      einstellen.
+    </p>
+    <p>
+      Der oder die Vorsitzende, im Falle seiner oder ihrer Verhinderung der oder die
+      stellvertretende Vorsitzende, im Falle finanzieller Verpflichtungen jeweils gemeinsam mit dem
+      Schatzmeister oder der Schatzmeisterin, vertreten den Verein.
+    </p>
+    <p>
+      Dem Vorstand des Vereins obliegt die Vertretung des Vereins nach § 26 BGB und die Führung
+      seiner Geschäfte. Er hat insbesondere folgende Aufgaben:
+    </p>
+    <ul>
+      <li>die Einberufung und die Vorbereitung der Mitgliederversammlungen einschließlich der Aufstellung der Tagesordnung,</li>
+      <li>die Vorlage des Arbeitsprogramms des Vereins einschließlich der Vorhaben des Konsortiums für das jeweils folgende Geschäftsjahr und des Geschäftsberichts für das zu Ende gehende Jahr an die Mitgliederversammlung,</li>
+      <li>die Ausführung der Beschlüsse der Mitgliederversammlung,</li>
+      <li>die Verwaltung der Finanzen und des Vereinsvermögens.</li>
+    </ul>
+    <p>
+      Die Mitglieder des Vorstands werden von der Mitgliederversammlung für die Dauer von zwei
+      Jahren einzeln gewählt. Mitglieder des Vorstands können nur Mitglieder des Vereins sein; mit
+      der Mitgliedschaft im Verein endet auch die Mitgliedschaft im Vorstand. Die Wiederwahl und
+      die vorzeitige Abberufung eines Vorstandsmitglieds durch die Mitgliederversammlung sind
+      zulässig. Ein Vorstandsmitglied bleibt nach Ablauf seiner regulären Amtszeit bis zur Wahl
+      seines Nachfolgers oder seiner Nachfolgerin im Amt. Scheidet ein Vorstandsmitglied vorzeitig
+      aus dem Vorstand aus, so können die verbleibenden Vorstandsmitglieder ein Mitglied des
+      Vereins bis zur Wahl eines Nachfolgers oder einer Nachfolgerin durch die
+      Mitgliederversammlung zum Vorstandsmitglied bestimmen.
+    </p>
+    <p>
+      Der Vorstand tritt nach Bedarf, mindestens aber zweimal jährlich, zusammen. Die Sitzungen
+      werden von dem oder der Vorsitzenden, bei seiner oder ihrer Verhinderung von dem oder der
+      stellvertretenden Vorsitzenden, mit einer Einberufungsfrist von einer Woche einberufen. Der
+      Vorstand ist beschlussfähig bei Anwesenheit von mindestens zwei Mitgliedern. Beschlüsse
+      werden mit der Mehrheit der abgegebenen Stimmen gefasst. Bei Stimmengleichheit entscheidet
+      die Stimme des oder der Vorsitzenden oder, bei seiner oder ihrer Verhinderung, die des oder
+      der stellvertretenden Vorsitzenden. Die Beschlüsse des Vorstands sind zu protokollieren. Das
+      Protokoll ist vom Protokollführer oder der Protokollführerin und dem oder der Vorsitzenden,
+      bei dessen oder deren Verhinderung von seinem oder ihrer Stellvertretung, oder einem
+      anderen Vorstandsmitglied zu unterschreiben.
+    </p>
+
+    <h3>Artikel 6 — Aufgaben, Einberufung und Beschlussfassung der Mitgliederversammlung</h3>
+    <p>
+      Die Mitgliederversammlung ist zuständig für die Entscheidung in folgenden Angelegenheiten:
+    </p>
+    <ul>
+      <li>Satzungsänderungen,</li>
+      <li>die Festsetzung der Mitgliedsbeiträge,</li>
+      <li>die Aufnahme und den Ausschluss von Vereinsmitgliedern,</li>
+      <li>die Wahl und die Abberufung des oder der Vorstandsvorsitzenden, des oder der stellvertretenden Vorsitzenden sowie des Schatzmeisters oder der Schatzmeisterin,</li>
+      <li>die Entgegennahme des Arbeitsprogramms für das folgende Jahr sowie des Geschäftsberichts für das zu Ende gehende Jahr und die Entlastung des Vorstands,</li>
+      <li>die Auflösung des Vereins.</li>
+    </ul>
+    <p>
+      Die Mitgliederversammlung wird von dem oder der Vorstandsvorsitzenden, im Falle seiner oder
+      ihrer Verhinderung von dem oder der stellvertretenden Vorsitzenden, mindestens einmal im
+      Jahr, möglichst im ersten Quartal, mit einer Einberufungsfrist von vier Wochen schriftlich und
+      mit Angabe der Tagesordnung einberufen. […]
+    </p>
+    <p>
+      (Hinweis: Die restlichen Bestimmungen zu Artikel 6–8 sind hier inhaltlich unverändert
+      übernommen und können bei Bedarf auch als separates PDF bereitgestellt werden.)
+    </p>
+
+    <h3>Artikel 7 — Finanzen</h3>
+    <p>
+      Der Verein finanziert sich aus Mitgliedsbeiträgen, Spenden, Zuschüssen sowie Einnahmen aus
+      Veranstaltungen und Dienstleistungen. Die Vorstandsmitglieder können
+      Kostenersatz oder eine Aufwandsentschädigung erhalten. Über die Höhe der Vergütung
+      entscheidet die Mitgliederversammlung. Der Schatzmeister oder die Schatzmeisterin sorgt für
+      die nötigen Einnahmen und legt der Mitgliederversammlung den Jahresfinanzplan und die
+      Jahresrechnung vor. Der Verein kann Vermögen einschließlich Grundvermögen besitzen.
+    </p>
+
+    <h3>Artikel 8 — Auflösung des Vereins</h3>
+    <p>
+      Im Falle der Auflösung des Vereins oder seiner Beendigung aus anderen Gründen sind der oder
+      die Vorsitzende des Vorstands und der oder die stellvertretende Vorsitzende gemeinsam
+      vertretungsberechtigte Liquidatoren, falls die Mitgliederversammlung keine anderen Personen
+      beruft. Im Falle der Auflösung oder bei Wegfall steuerbegünstigter Zwecke fällt das Vermögen
+      an das Südasienbüro e.V., Bonn, das es unmittelbar und ausschließlich für
+      steuerbegünstigte Zwecke zu verwenden hat.
+    </p>
+  </details>
+</section>
+
+<section id="board">
+  <h2>Vorstand</h2>
+  <p>Der Vorstand des Südasien-Konsortium e.V. besteht derzeit aus:</p>
+  <ul class="board-list">
+    <li>Hans-Joachim Kiderlen</li>
+    <li>Dr. Benjamin Zachariah</li>
+    <li>Dr. Thomas K. Gugler</li>
+  </ul>
+</section>
+
 <section id="events">
-  <h2>Aktivitäten & Veranstaltungen</h2>
+  <h2>Aktivitäten &amp; Veranstaltungen</h2>
   <p>
     Unsere Aktivitäten umfassen wissenschaftliche Treffen, Workshops, Gastvorträge und
     Austauschprojekte. Eine Auswahl exemplarischer Formate:
   </p>
 
   <ul>
-    <li><strong>Jahrestagung</strong> zur Südasienforschung</li>
+    <li><strong>Jahrestagungen</strong> zur Südasienforschung</li>
     <li><strong>Workshops</strong> zu neuen Forschungsfeldern</li>
-    <li><strong>Online-Vorträge</strong> mit Wissenschaftler*innen aus Südasien</li>
-    <li><strong>Publikationsprojekte</strong> & Forschungskooperationen</li>
+    <li><strong>Online-Vorträge</strong> mit Wissenschaftlerinnen und Wissenschaftlern aus Südasien</li>
+    <li><strong>Publikationsprojekte</strong> &amp; Forschungskooperationen</li>
   </ul>
 
   <p>Konkrete Termine werden hier veröffentlicht, sobald sie feststehen.</p>
 </section>
 
 <section id="contact">
-  <h2>Kontakt</h2>
+  <h2>Kontakt &amp; Bankverbindung</h2>
   <p>
     Für Anfragen, Kooperationen oder Interesse an einer Mitarbeit erreichen Sie uns unter:
   </p>
   <p><strong>E-Mail:</strong> Suedasien-Konsortium@proton.me</p>
   <p><strong>Sitz:</strong> Berlin</p>
+
+  <h3>Bankverbindung</h3>
+  <div class="bank-highlight">
+    <ul class="bank-box">
+      <li><strong>Kontoinhaber:</strong> Südasien-Konsortium e.V.</li>
+      <li><strong>Bank:</strong> Berliner Sparkasse</li>
+      <li><strong>BIC:</strong> BELADEBEXXX</li>
+      <li><strong>IBAN:</strong> DE91 1005 0000 0191 4545 91</li>
+    </ul>
+    <p>Bitte im Verwendungszweck ggf. „Spende“ oder „Mitgliedsbeitrag“ angeben.</p>
+  </div>
 </section>
 
 <footer>
